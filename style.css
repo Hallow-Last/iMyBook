@@ -1,0 +1,400 @@
+
+/* General Design */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0e1015;
+    color: #e9eaf0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.topbar {
+    background-color: #151820;
+    border-bottom: 1px solid #292d38;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo-mark {
+    color: #4b91e8;
+    font-size: 26px;
+}
+
+.navigation {
+    display: flex;
+    gap: 25px;
+}
+
+.navigation a {
+    color: #9196a5;
+    padding: 8px 0;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: white;
+    border-bottom: 2px solid #4b91e8;
+}
+
+.header-right {
+    margin-left: auto;
+    color: #71798a;
+    font-size: 11px;
+}
+
+/* Main Layout */
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 30px;
+}
+
+.page-heading {
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    color: #4b91e8;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.page-heading h1 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.description,
+.section-heading p {
+    color: #9196a5;
+}
+
+/* Search */
+.search-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 45px;
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #151820;
+    border: 1px solid #292d38;
+    padding: 0 12px;
+}
+
+.search-icon {
+    color: #9196a5;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+input,
+select {
+    background: #151820;
+    color: white;
+    border: 1px solid #292d38;
+    padding: 11px;
+    border-radius: 4px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 11px 16px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.primary-btn,
+.save-btn {
+    background-color: #3b82d6;
+}
+
+.primary-btn:hover,
+.save-btn:hover {
+    background-color: #2563b0;
+}
+
+.delete-btn {
+    background-color: #963b48;
+}
+
+.progress-btn {
+    background-color: #35445b;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Sections */
+.content-section {
+    margin-bottom: 55px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #292d38;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.section-heading p {
+    margin: 5px 0 0;
+    font-size: 12px;
+}
+
+.section-index {
+    color: #71798a;
+    font-size: 11px;
+}
+
+/* Book Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background-color: #191d27;
+    border: 1px solid #292d38;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.book-card:hover {
+    border-color: #4b91e8;
+}
+
+button:focus-visible, a:focus-visible, select:focus-visible,
+input:focus-visible {
+    outline: 2px solid #8dbfff;
+    outline-offset: 3px;
+}
+
+.book-cover,
+.cover-placeholder {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #252a35;
+    color: #9196a5;
+}
+
+.book-info {
+    padding: 14px;
+}
+
+.book-title {
+    font-size: 15px;
+    margin: 0 0 10px;
+}
+
+.book-info p {
+    color: #9196a5;
+    font-size: 12px;
+    margin: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+.book-info label {
+    display: block;
+    margin: 12px 0 5px;
+}
+
+.book-info input,
+.book-info select,
+.book-info button {
+    width: 100%;
+    margin-top: 7px;
+}
+
+/* Reading Progress */
+.progress-text {
+    color: white !important;
+    font-weight: bold;
+}
+
+.progress-bar {
+    height: 7px;
+    background: #303541;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4b91e8;
+}
+
+/* Messages */
+.empty-state,
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 20px;
+    border: 1px dashed #303541;
+    color: #9196a5;
+}
+
+.empty-state h3 {
+    color: white;
+}
+
+.empty-state p {
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.text-link {
+    color: #4b91e8;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #292d38;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    color: #71798a;
+    font-size: 11px;
+}
+
+/* Backlog Roulette */
+.roulette-panel {
+    background: #151d2b;
+    border: 1px solid #304969;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+.roulette-panel h2 { margin: 8px 0 12px; }
+.roulette-panel p { line-height: 1.6; }
+.roulette-note { color: #a8b6cc; }
+#rouletteButton {
+    background: #4b91e8;
+    color: #07101d;
+    font-weight: bold;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+#rouletteButton:hover { background: #77aff4; }
+#rouletteButton:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+#rouletteResult:not(:empty) { margin-top: 22px; }
+.roulette-book {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #101722;
+    border: 1px solid #29384c;
+    border-radius: 10px;
+    padding: 22px;
+}
+.roulette-book-information { flex: 1 1 220px; min-width: 0; }
+.roulette-book .roulette-result-label {
+    margin: 0 0 8px;
+    color: #8a9cb6;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+.roulette-book h3 { margin: 0; font-size: 23px; line-height: 1.35; overflow-wrap: anywhere; }
+.roulette-book .roulette-author { margin: 7px 0 0; color: #a8b6cc; }
+.roulette-chance {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background: #1b2c43;
+    color: #a5cbff;
+}
+.roulette-chance strong { font-size: 22px; }
+.roulette-chance span { font-size: 11px; }
+.roulette-details { margin-top: 14px; color: #a8b6cc; font-size: 13px; }
+.roulette-details summary { cursor: pointer; width: fit-content; padding: 6px 0; }
+.roulette-details summary:hover { color: #e9eaf0; }
+.roulette-details summary:focus-visible { outline: 2px solid #8dbfff; outline-offset: 4px; }
+.roulette-details p { margin: 10px 0; max-width: 680px; }
+@media (max-width: 480px) {
+    .roulette-panel { padding: 18px; }
+    .roulette-book { padding: 18px; }
+}
+
+
+/* The shared portrait cover is shown whole, without cropping its text. */
+.book-cover { object-fit: contain; background: #081326; }
+.roulette-cover { width: 72px; height: 108px; object-fit: contain; border-radius: 5px; }
+.saved-progress-reminder { margin: 16px 0; padding: 12px; background: #15243a; border-radius: 6px; }
+.saved-progress-reminder .saved-progress-status { color: #a5cbff; font-weight: bold; }
+.saved-progress-reminder p { margin: 0 0 8px; }
+.saved-book-link { display: inline-block; color: #a5cbff; padding: 8px 0; text-decoration: underline; }
+.book-card:target { outline: 2px solid #8dbfff; outline-offset: 4px; }
+
+/* Saved dates and on-demand book synopsis. */
+.book-added-date { color: #a8b6cc; font-size: 12px; line-height: 1.5; }
+.book-description { margin: 14px 0; font-size: 13px; }
+.book-description summary { color: #a5cbff; cursor: pointer; padding: 6px 0; }
+.book-description summary:focus-visible { outline: 2px solid #8dbfff; outline-offset: 3px; }
+.book-description-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; max-height: 280px; overflow-y: auto; }
+.book-description .description-source { font-size: 11px; color: #9196a5; }
+.roulette-book { align-items: flex-start; }
+
+@media (max-width: 650px) {
+    .topbar { flex-wrap: wrap; gap: 14px; }
+    .header-right { display: none; }
+    .container { padding: 24px 16px; }
+    .search-toolbar { flex-direction: column; }
+    .search-box { min-height: 44px; }
+    .section-heading { align-items: flex-start; gap: 12px; }
+    .section-index { display: none; }
+}

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://openlibrary.org; object-src 'none'; base-uri 'self'">
+    <title>iMyBook — Discover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+
+        <a href="index.html" class="logo">
+            <span class="logo-mark">iM.</span>
+            <span class="logo-name">iMyBook</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html" class="active">Discover</a>
+            <a href="mybooks.html">My Library</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-label">PERSONAL READING SPACE</span>
+        </div>
+
+    </header>
+    <main class="container">
+        <div class="page-heading">
+            <div>
+                <p class="eyebrow">BOOK DISCOVERY</p>
+                <h1>Discover</h1>
+                <p class="description">
+                    Find something worth reading.
+                </p>
+            </div>
+        </div>
+        <div class="search-toolbar">
+
+            <div class="search-box">
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    aria-label="Search for a book title or author"
+                    placeholder="Search by title or author"
+                >
+            </div>
+
+            <select id="genreSelect" aria-label="Select book genre">
+                <option value="">All genres</option>
+                <option value="fiction">Fiction</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="mystery">Mystery</option>
+                <option value="romance">Romance</option>
+                <option value="horror">Horror</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+                <option value="adventure">Adventure</option>
+                <option value="biography">Biography</option>
+            </select>
+
+            <button id="searchBtn" class="primary-btn">
+                Search
+            </button>
+
+        </div>
+        <section class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Explore books</h2>
+                    <p>Browse titles from Open Library</p>
+                </div>
+
+                <span class="section-index">01 / DISCOVER</span>
+            </div>
+
+            <div id="bookResults" class="book-grid" aria-live="polite">
+
+                <div class="empty-state">
+                    <div class="empty-symbol">⌕</div>
+                    <h3>Nothing to show yet</h3>
+                    <p>
+                        Search for a title or choose a genre
+                        to explore the collection.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+        <section class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Selected for you</h2>
+                    <p>Up to four new-to-your-library matches for your selected genre</p>
+                </div>
+
+                <span class="section-index">02 / RECOMMENDATIONS</span>
+            </div>
+
+            <div id="recommendations" class="book-grid" aria-live="polite">
+
+                <div class="empty-state">
+                    <h3>No recommendations yet</h3>
+                    <p>
+                        Select a genre to discover
+                        books that match your interests, then click Search.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <span>© iMyBook</span> 
+    </footer>
+
+    <script src="storage.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

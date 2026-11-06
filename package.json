@@ -1,0 +1,16 @@
+{
+  "name": "imybook",
+  "version": "1.0.0",
+  "description": "Electron book discovery and reading-list manager",
+  "main": "Main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/logic.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^44.9.0"
+  }
+}

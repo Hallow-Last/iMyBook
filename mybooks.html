@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://openlibrary.org; object-src 'none'; base-uri 'self'">
+    <title>iMyBook — My Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <a href="index.html" class="logo">
+            <span class="logo-mark">iM.</span>
+            <span class="logo-name">iMyBook</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html">Discover</a>
+            <a href="mybooks.html" class="active">My Library</a>
+        </nav>
+
+        <div class="header-right">
+            <span class="header-label">PERSONAL READING SPACE</span>
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <div class="page-heading">
+            <div>
+                <p class="eyebrow">PERSONAL COLLECTION</p>
+                <h1>My Library</h1>
+                <p class="description">
+                    Your books, reading progress and future reads.
+                </p>
+            </div>
+        </div>
+
+        <section class="roulette-panel" aria-labelledby="rouletteHeading">
+            <p class="eyebrow">BACKLOG ROULETTE</p>
+            <h2 id="rouletteHeading">Rediscover your next read</h2>
+            <p>Draw from your unfinished books. Books untouched for longer get a greater chance.</p>
+            <p class="roulette-note">Uses your whole library, regardless of the list filter below.</p>
+            <button id="rouletteButton" type="button">Rediscover a Book</button>
+            <div id="rouletteResult" aria-live="polite"></div>
+        </section>
+
+        <section class="content-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Reading list</h2>
+                    <p>Manage your personal collection</p>
+                </div>
+
+                <select id="statusFilter" aria-label="Filter books by reading status">
+                    <option value="all">All books</option>
+                    <option value="want">Want to read</option>
+                    <option value="reading">Currently reading</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+            </div>
+
+            <div id="savedBooks" class="book-grid" aria-live="polite">
+
+                <div class="empty-state">
+                    <h3>Your library is empty</h3>
+                    <p>
+                        Books you save from Discover
+                        will appear here.
+                    </p>
+
+                    <a href="index.html" class="text-link">
+                        Explore books →
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <span>© iMyBook</span>
+    </footer>
+
+    <script src="storage.js"></script>
+    <script src="roulette.js"></script>
+    <script src="books.js"></script>
+
+</body>
+</html>
